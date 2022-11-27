@@ -1,0 +1,139 @@
+<!-- content-wrap -->
+<div class="content-wrap">
+  <!-- main -->
+  <section id="main">
+    <div>
+        <form action="index.php?suivant=comptage" method="POST">
+            <h1>Encodage</h1>
+               <?php 
+                    if(isset($_SESSION['pseudo'])) {
+                      echo '<label class="label">';
+                      echo $_SESSION['pseudo'];
+                      echo '</label>';
+                    } 
+                      else {
+                        echo'<label for="personne" class="label">Personne :</label>
+                          <select name="personne" id="personne"class="deroul">
+                            <option value="" selected disabled hidden>Choisir</option>
+                            <option value="As">As</option>
+                            <option value="Geoffrey">Geoffrey</option>
+                            <option value="Marianne">Marianne</option>
+                            <option value="Melody">Melody</option>
+                          </select>';
+                    }
+              ?>
+              </br>
+              <label for="vid" class="label">Vidéo n°:</label>
+                <select name="vid" id="vid" class="deroul">
+                  <option value="" selected disabled hidden>Choisir</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                </select>
+              </br>
+              <label for="visio" class="label">Visionnage n°:</label>
+                <select name="visio" id="visio" class="deroul">
+                  <option value="" selected disabled hidden>Choisir</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+            </br><hr>
+            <h1>Sujet</h1>
+              <label for="sujet" class="label">Code sujet :</label>
+                <select name="sujet" id="sujet" class="deroul">
+                  <option value="" selected disabled hidden>Choisir</option>
+                  <option value="FA01">FA01</option>
+                  <option value="FA02">FA02</option>
+                  <option value="FA03">FA03</option>
+                  <option value="FA04">FA04</option>
+                  <option value="FA05">FA05</option>
+                  <option value="FA06">FA06</option>
+                  <option value="FA07">FA07</option>
+                  <option value="FA08">FA08</option>
+                  <option value="FA09">FA09</option>
+                  <option value="FA10">FA10</option>
+                  <option value="FT01">FT01</option>
+                  <option value="FT02">FT02</option>
+                  <option value="FT04">FT04</option>
+                  <option value="FT05">FT05</option>
+                  <option value="FT06">FT06</option>
+                  <option value="FT07">FT07</option>
+                  <option value="FT08">FT08</option>
+                  <option value="FT09">FT09</option>
+                  <option value="MA01">MA01</option>
+                  <option value="MA02">MA02</option>
+                  <option value="MA03">MA03</option>
+                  <option value="MA04">MA04</option>
+                  <option value="MA05">MA05</option>
+                  <option value="MA06">MA06</option>
+                  <option value="MA07">MA07</option>
+                  <option value="MA08">MA08</option>
+                  <option value="MA09">MA09</option>
+                  <option value="MT01">MT01</option>
+                  <option value="MT02">MT02</option>
+                  <option value="MT04">MT04</option>
+                  <option value="MT05">MT05</option>
+                  <option value="MT06">MT06</option>
+                  <option value="MT07">MT07</option>
+                  <option value="MT08">MT08</option>
+                  <option value="MT09">MT09</option>
+                </select>
+            </br><hr>
+            <h1>Comportements</h1>
+              <h2>Arrêts</h2>
+                <h3>Indices</h3>
+                  <center>
+                    <button type="button" class="compteurs" name="haut_visage" data-id="Haut du visage" value="0" onClick="buttonClicked(this)">Haut</br>Visage</button>
+                    <input type="hidden" class="hidden" name="h_haut_visage" value=0 />
+                    <button type="button" class="compteurs" name="bas_visage" data-id="Bas du visage" value=0 onClick="buttonClicked(this)">Bas</br>Visage</button>
+                    <input type="hidden" class="hidden" name="h_bas_visage" value=0 />
+                    <button type="button" class="compteurs" name="clignements" data-id="Clignements" value=0 onClick="buttonClicked(this)">Clignements des yeux</button>
+                    <input type="hidden" class="hidden" name="h_clignements" value=0 />
+                    <button type="button" class="compteurs" name="yeux" data-id="Mouvements des yeux" value=0 onClick="buttonClicked(this)">Mouvements des yeux</button>
+                    <input type="hidden" class="hidden" name="h_yeux" value=0 />
+                      </br></br>
+                    <button type="button" class="compteurs" name="tete" data-id="Mouvements de la tête" value=0 onClick="buttonClicked(this)">Mouvements de la tête</button>
+                    <input type="hidden" class="hidden" name="h_tete" value=0 />
+                    <button type="button" class="compteurs" name="buste" data-id="Mouvements du buste" value=0 onClick="buttonClicked(this)">Mouvements du buste</button>
+                    <input type="hidden" class="hidden" name="h_buste" value=0 />
+                    <button type="button" class="compteurs" name="bras" data-id="Mouvements des bras" value=0 onClick="buttonClicked(this)">Mouvements des bras</button>
+                    <input type="hidden" class="hidden" name="h_bras" value=0 />
+                    <button type="button" class="compteurs" name="mains" data-id="Mouvements des mains" value=0 onClick="buttonClicked(this)">Mouvements des mains</button>
+                    <input type="hidden" class="hidden" name="h_mains" value=0 />
+                      </br></br>
+                    <button type="button" class="compteurs" name="jambes" data-id="Mouvements des jambes" value=0 onClick="buttonClicked(this)">Mouvements des jambes</button>
+                    <input type="hidden" class="hidden" name="h_jambes" value=0 />
+                    <button type="button" class="compteurs" name="pieds" data-id="Mouvements des pieds" value=0 onClick="buttonClicked(this)">Mouvements des pieds</button>
+                    <input type="hidden" class="hidden" name="h_pieds" value=0 />
+                    <button type="button" class="compteurs" name="self_adapt" data-id="Self-adaptators" value=0 onClick="buttonClicked(this)">Self</br>Adaptators</button>
+                    <input type="hidden" class="hidden" name="h_self_adapt" value=0 />
+                      </br></br>
+                </center>
+            <h3>Compteurs</h3>
+              <p id="num_clicks_feedback"></p>
+            <hr>
+            <h2>Entre les arrêts</h2>
+            <h3>Arrêt 1 à l'arrêt 2</h3>
+              </br>
+              <label for="tempsP1P2" class="label">Temps P1 – P2 :</label>
+              <input type="text" class="entry" name="tempsP1P2" placeholder=" Format : 1.00"></input>
+              <button type="button" class="compteurspas" name="pasP1P2" data-id="Pas P1 – P2" value=0 onClick="buttonClicked(this)">Pas P1 – P2</button>
+              <input type="hidden" class="hidden" name="h_pasP1P2" value=0 />
+              </br></br>
+              <h3>Arrêt 2 à la cible</h3>
+              </br>
+              <label for="tempsP2Cible" class="label">Temps P2 – Cible :</label>
+              <input type="text" class="entry" name="tempsP2Cible" placeholder=" Format : 1.00"></input>
+              <button type="button" class="compteurspas" name="pasP2Cible" data-id="Pas P1 – P2" value=0 onClick="buttonClicked(this)">Pas P1 – P2</button>
+              <input type="hidden" class="hidden" name="h_pasP2Cible" value=0 />
+              </br></br></br></br>
+            <center>
+              <input type="reset" value="Réinitialiser" class="fin"/>
+              <input type="submit" value="Valider" class="fin" />
+            </center>
+        </form>
+    </div>
+  </section>
+</div>
+
+<script src="click.js"> </script>
